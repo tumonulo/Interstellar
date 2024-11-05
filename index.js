@@ -89,10 +89,10 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
- if (process.env.MASQR === "true") {
+/* if (process.env.MASQR === "true") {
   console.log(chalk.green("Masqr is enabled"));
   setupMasqr(app);
-}
+}*/
 
 const blocked = Object.keys(config.blocked);
 
