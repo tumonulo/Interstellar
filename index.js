@@ -89,10 +89,10 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-/* if (process.env.MASQR === "true") {
+ if (process.env.MASQR === "true") {
   console.log(chalk.green("Masqr is enabled"));
   setupMasqr(app);
-} */
+}
 
 const blocked = Object.keys(config.blocked);
 
@@ -106,7 +106,7 @@ app.get("/assets/js/m.js", (req, res) => {
 
   const main = path.join(__dirname, "static/assets/js/m.js");
 
-  // console.log(`Checking hostname: ${hostname}, Blocked: ${isBlocked}`);
+  console.log(`Checking hostname: ${hostname}, Blocked: ${isBlocked}`);
 
   try {
     if (isBlocked) {
